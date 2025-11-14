@@ -50,10 +50,10 @@ Editable mode = “link the source folder directly”.
 Changes in:
 
 ```
-src/yourpkg/
+src/mathlib/
 ```
 
-are immediately reflected everywhere Python imports `yourpkg`.
+are immediately reflected everywhere Python imports `mathlib`.
 
 This is what most developers use **all the time during development**.
 
