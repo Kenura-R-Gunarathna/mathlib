@@ -1,5 +1,5 @@
 [project]
-name = "mathlib"
+name = "krag_mathlib"
 version = "0.1.0"
 description = "A clean mathematical utility package."
 readme = "README.md"
