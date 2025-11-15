@@ -1,6 +1,6 @@
 [project]
 name = "krag_mathlib"
-version = "0.1.15"
+version = "0.1.16"
 description = "A clean mathematical utility package."
 readme = "README.md"
 requires-python = ">=3.8"
