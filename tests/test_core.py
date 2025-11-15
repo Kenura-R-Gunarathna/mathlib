@@ -1,4 +1,4 @@
-from mathlib.core import add, subtract, multiply, divide, exponent, log
+from krag_mathlib.core import add, subtract, multiply, divide, exponent, log
 
 def test_add():
     assert add(1, 2) == 3

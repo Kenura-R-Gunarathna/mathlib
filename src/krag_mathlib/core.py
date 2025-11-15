@@ -1,5 +1,5 @@
 """
-mathlib.core
+krag_mathlib.core
 
 A small collection of basic mathematical operations.
 """
