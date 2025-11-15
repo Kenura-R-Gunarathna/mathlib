@@ -1,8 +1,40 @@
-# mathlib
+# krag-mathlib
 
-## Run tests — cleanest way
+`krag-mathlib` is a Python library for performing mathematical operations like addition, subtraction, and more.
 
-Install dev-dependencies
+---
+
+## 📑 Table of Contents
+
+1. [Introduction](#introduction)
+2. [Installation](#installation)
+3. [Development Workflow](#development-workflow)
+
+   * [Run Tests](#1-pytest--q---run-your-tests)
+   * [Editable Install](#2-pip-install-e---editable-install-development-mode)
+   * [Build Package](#3-python--m-build---create-release-artifacts)
+4. [Publishing](#publishing)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+7. [License](#license)
+
+---
+
+## Introduction
+
+`krag-mathlib` provides a clean and simple interface for performing common mathematical operations. It is designed for Python developers who want a lightweight, easy-to-use library for basic calculations.
+
+---
+
+## Installation
+
+Install the package from PyPI:
+
+```bash
+pip install krag-mathlib
+```
+
+For development with optional dependencies (for testing, etc.):
 
 ```bash
 pip install .[dev]
@@ -10,125 +42,134 @@ pip install .[dev]
 
 ---
 
-### ✅ **1. `pytest -q` — Run your tests**
+## Development Workflow
 
-You run:
+### 1. `pytest -q` — Run your tests
 
-```
+Run:
+
+```bash
 pytest -q
 ```
 
-when you want to **test your package code**.
+Use it to test your package code during:
 
-Use it:
-
-* During development
+* Development
 * Before committing
 * Before releasing/publishing
 
-It checks that everything works **inside your local environment**.
+This ensures your package works correctly in your local environment.
 
 ---
 
-### ✅ **2. `pip install -e .` — Editable install (development mode)**
+### 2. `pip install -e .` — Editable install (development mode)
 
-You run:
+Run:
 
-```
+```bash
 pip install -e .
 ```
 
-when you want to:
+Use editable mode to:
 
-* Use this package **inside another project**
-* Test how the package behaves when imported
-* Develop two packages at once
-* Import the package without reinstalling after every edit
-
-Editable mode = “link the source folder directly”.
+* Use the package in another project
+* Test imports without reinstalling
+* Develop multiple packages simultaneously
 
 Changes in:
 
 ```
-src/mathlib/
+src/krag_mathlib/
 ```
 
-are immediately reflected everywhere Python imports `mathlib`.
-
-This is what most developers use **all the time during development**.
+are immediately reflected everywhere Python imports `krag_mathlib`.
 
 ---
 
-### ✅ **3. `python -m build` — Create release artifacts**
+### 3. `python -m build` — Create release artifacts
 
-You run:
+Run:
 
-```
+```bash
 python -m build
 ```
-
-when you are **done developing** and want to **ship** the package.
 
 This creates:
 
 ```
-dist/myproject-0.1.0-py3-none-any.whl
-dist/myproject-0.1.0.tar.gz
+dist/krag_mathlib-0.1.0-py3-none-any.whl
+" +
+"dist/krag_mathlib-0.1.0.tar.gz
 ```
 
-Use this when:
+Use this before:
 
-* Releasing on **GitHub Releases**
-* Publishing to **PyPI**
-* Giving the packaged library to someone else
-* Deploying internally / privately
-
-This is the “final compiled package” that others install.
+* Releasing on GitHub
+* Publishing to PyPI
+* Sharing the library
 
 ---
 
-## 🎯 **Perfect, clean workflow**
+## Publishing
 
-### **Daily development workflow**
+### PyPI
 
-```
-pip install -e .
-pytest -q
-```
-
-→ develop, test, iterate
-
----
-
-### **Before release**
-
-```
-pytest -q
-python -m build
-```
-
-→ package is ready for upload
-
----
-
-### **Publishing**
-
-For PyPI:
-
-```
+```bash
 twine upload dist/*
 ```
 
-For GitHub:
+### GitHub
 
-* Upload the wheel + tar.gz to a release
+* Upload wheel + tar.gz to a release
 
 ---
 
-## ⭐ Summary (very clean)
+## Usage
 
-| Action                | Command            | Purpose                                    |
-| --------------------- | ------------------ | ------------------------------------------ |
-| **Test the package**  | `pytest -q`        | Make sure package works                    |
-| **Editable install**  | `pip install -e .` | Use package in dev without reinstalling    |
-| **Build for release** | `python -m build`  | Produce wheel + source dist for publishing |
+Install from PyPI:
+
+```bash
+pip install krag-mathlib
+```
+
+Then use in your code:
+
+```python
+from krag_mathlib import add, subtract
+
+def main():
+    a = 10
+    b = 5
+
+    sum_result = add(a, b)
+    diff_result = subtract(a, b)
+
+    print(f"The sum of {a} and {b} is: {sum_result}")
+    print(f"The difference when {b} is subtracted from {a} is: {diff_result}")
+
+if __name__ == "__main__":
+    main()
+```
+
+**Note:** The PyPI package name is `krag-mathlib`, but the import is `krag_mathlib` (matching the internal folder name).
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests:
+
+```bash
+pytest -q
+```
+
+5. Submit a pull request
+
+---
+
+## License
+
+This project is licensed under the MIT License.
